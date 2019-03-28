@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			function Person (name,age) {
+				this.name=name;
+				this.age=age;
+				this.show=function(){
+					alert(name+"年龄是："+age);
+				}
+				
+			}
+			var zsf=new Person('张山丰',30);
+			var zs=new Person('李四',80);
+			zsf.show();
+			zs.show();
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

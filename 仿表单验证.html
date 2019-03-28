@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.{
+				margin: 0;
+				padding: 0;
+			}
+			.box{
+				text-align: center;
+				margin-top:100px ;
+			}
+			.box span{
+				text-align: center;
+				padding-left:20px ;
+				vertical-align: bottom;
+				text-align: left;
+				background: gray;
+				display: inline-block;
+				width: 300px;
+				height: 22px;
+				border: 1px solid #cccccc;
+			}
+			.box input{
+				
+				height: 18px;
+			}
+			.box span.right{
+				background: #dfffdf url(images/right.png) no-repeat center left;
+				color: #008000;
+				border: 1px solid #aaffdf;
+			}
+			.box span.wrong{
+				background: #ffdcd0 url(images/wrong.png) no-repeat center left;
+				color: #ff0000;
+				border: 1px solid #dddcd0;
+			}
+		</style>
+		<script type="text/javascript">
+			window.onload=function(){
+				function $(id){
+					return document.getElementById(id);
+				}
+				$("grade").onblur=function(){
+					var tet=$("grade").value;
+					if(tet==""){
+						$("tips").innerHTML="内容不能为空";
+						$("tips").className="wrong";
+					}else if(isNaN(tet)){
+						$("tips").innerHTML="你输入的不是数字";
+						$("tips").className="wrong";
+					}else if(tet<0 || tet>150){
+						$("tips").innerHTML="你吹牛逼";
+						$("tips").className="wrong";
+					}else{
+						$("tips").innerHTML="输入成绩正确";
+						$("tips").className="right";
+					}
+				}
+
+//				$("grade").onblur=function(){
+//					var txt=$("grade").value;
+//					if(txt==""){
+//						$("tips").innerHTML="小哥哥，内容不能为空";
+//						$("tips").className="wrong";
+//					}else if(isNaN(txt)){
+//						$("tips").innerHTML="小哥哥，请输入数字";
+//						$("tips").className="wrong";
+//					}else if(txt>150 || txt<0){
+//						$("tips").innerHTML="小哥哥，成绩范围0-150";
+//						$("tips").className="wrong";
+//					}else{
+//						$("tips").innerHTML="小哥哥，输入合理";
+//						$("tips").className="right";
+//					}
+//				}
+			}		
+		</script>
+	</head>
+	<body>
+		<div class="box">
+			<label for="grade">高数</label>
+			<input id="grade"/>
+			<span id="tips">请输入数字</span>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="pp">
+			姓名：<input type="text" id="p1" value=""/><br />
+			年龄：<input type="text" id="p2"/><br />
+			电话：<input type="text" id="p3"/><br />
+			住址：<input type="text" id="p4" /><br />
+			<button id="p5">确认</button>
+		</div>
+		
+	</body>
+	<script>
+		var p=document.getElementById("pp")
+		var h=document.getElementById("p1")
+		console.log(p.childNodes.length);
+		for (var i=0;i<p.childNodes.length;i++) {
+			console.log(p.childNodes[i].nodeName);
+		}
+		
+		var ppp=document.createElement("input");
+		ppp.innerHTML="性别：<input />"
+		p.insertBefore(ppp,h.firstChild);
+	</script>
+</html>

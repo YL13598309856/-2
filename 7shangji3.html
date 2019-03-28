@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			function Person (name,age) {
+				this.name=name;
+				this.age=age;
+				this.show=function(){
+					alert("姓名是："+name+"，年龄是："+age);
+				}
+				
+			}
+			var zsf=new Person('张山丰',30);
+			zsf.show();
+			function Sment(name,age,sex,addr,tel){
+				this.name=name;
+				this.age=age;
+				this.sex=sex;
+				this.addr=addr;
+				this.tel=tel;
+				this.show=function(){
+					alert(name+age+sex+addr+tel);
+				}
+			}
+			var xm=new Sment('小明',18,'男','河南','13598309856');
+			xm.show();
+			for(var yl in xm){
+				console.log(yl+"="+xm[yl])
+			}
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

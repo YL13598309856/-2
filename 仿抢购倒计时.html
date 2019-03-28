@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			p{
+				text-align: center;
+				padding: 100px;
+				color: red;
+				font-size: 30px;
+			}
+		</style>
+		<script>
+			window.onload=function(){
+				var endTime=new Date("2019/04/30 23:59:59");
+				setInterval(fn,1000);
+				var p=document.getElementsByTagName("p")[0];
+				function fn(){
+					var curren=new Date();
+					var ms=endTime.getTime()-curren.getTime();
+					var secon=parseInt(ms/1000);
+					//console.log(secon);
+					var tian=parseInt(secon/3600/24);
+					var hour=parseInt(secon/3600%24);
+					var temps=secon-(tian*24*60*60+hour*60*60);
+					var minute=0;
+					if (temps>0) {
+						minute=parseInt(temps/60);
+					}
+					var second=0;
+					var tempss=secon-(tian*24*60*60+hour*60*60+minute*60);
+					if (tempss>0) {
+						secon=tempss;
+					}
+					tian<10?tian="0"+tian :tian;
+					hour<10?hour="0"+hour:hour;
+					minute<10?minute="0"+minute:minute;
+					secon<10?secon="0"+secon:secon;
+					p.innerHTML="距离五一活动还剩："+tian+"天"+hour+"时"+minute+"分"+secon+"秒";
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<p>
+			距离五一活动还剩：
+		</p>
+	</body>
+</html>

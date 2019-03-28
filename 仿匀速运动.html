@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			.box{
+				width: 100px;
+				height: 100px;
+				background: red;
+				position: absolute;
+				top: 100px;
+				left: 0;
+			}
+		</style>
+		<script type="text/javascript">
+			window.onload=function(){
+				var box=document.getElementById("box");
+				var btn=document.getElementById("btn");
+				var mun=0;
+				btn.onclick=function(){
+					setInterval(function(){
+						mun+=5;
+						if (mun>=500) {
+							mun=500;
+						}
+						box.style.left=mun+"px";
+					},10)
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<button id="btn">点我开始</button>
+		<div class="box" id="box">
+			
+		</div>
+	</body>
+</html>
